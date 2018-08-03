@@ -1,0 +1,10 @@
+---
+- hosts: 18.216.85.74
+  user: ubuntu
+  sudo: yes
+  roles:
+     - role: java
+     - role: tomcat
+     - role: leadapp
+     - role: schema
+     - role: mysql 

@@ -1,2 +1,8 @@
 ---
 # tasks file for leadapp
+# tasks file for lead
+- name: copy the lead app jenkins to tomcat
+  copy:
+    src: leadapp.war
+    dest: /opt/apache-tomcat-7.0.90/webapps
+

@@ -1,2 +1,14 @@
 ---
 # tasks file for java
+# tasks file for java
+- name: Add Java repository
+  raw: add-apt-repository -y ppa:webupd8team/java
+# Automatically accepts the Oracle License popup in the terminal
+- name: Automatically select the Oracle License
+  raw: echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+# Install Java 8
+- name: Install the Java 8 package
+  apt:
+   name: oracle-java8-installer
+   state: present
+   update_cache: yes
